@@ -1,310 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>LearnMate Admission Form</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
 body{
-background:#ffffff;
-padding:50px 20px;
-color:#1f2937;
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    margin:0;
+    padding:40px 20px;
+    color:#1f2937;
 }
 
 .container{
-max-width:1000px;
-margin:auto;
+    max-width:1000px;
+    margin:auto;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:50px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
 }
 
 .logo{
-text-align:center;
-margin-bottom:20px;
+    text-align:center;
+    margin-bottom:20px;
 }
 
 .logo img{
-max-width:350px;
-width:100%;
+    max-width:350px;
 }
 
 h1{
-text-align:center;
-font-size:42px;
-margin-bottom:15px;
+    text-align:center;
+    font-size:48px;
+    margin-bottom:15px;
 }
 
 .highlight{
-color:#2563eb;
+    color:#2563eb;
 }
 
 .subtitle{
-text-align:center;
-color:#6b7280;
-font-size:18px;
-margin-bottom:15px;
+    text-align:center;
+    color:#6b7280;
+    font-size:18px;
+    margin-bottom:25px;
 }
 
 .whatsapp{
-text-align:center;
-font-size:18px;
-font-weight:600;
-color:#2563eb;
-margin-bottom:40px;
+    text-align:center;
+    margin-bottom:35px;
+    font-size:22px;
+    font-weight:600;
+    color:#2563eb;
 }
 
 .form-box{
-background:#f8fafc;
-border:1px solid #e5e7eb;
-border-radius:20px;
-padding:35px;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:30px;
 }
 
 .form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-input,
-select{
-width:100%;
-padding:15px;
-border:1px solid #d1d5db;
-border-radius:12px;
-font-size:15px;
-background:white;
-outline:none;
-}
-
-input:focus,
-select:focus{
-border-color:#2563eb;
+input,select{
+    width:100%;
+    padding:16px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    background:white;
+    font-size:16px;
 }
 
 .full{
-grid-column:1/-1;
+    grid-column:1/-1;
 }
 
 .btn{
-width:100%;
-padding:18px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:12px;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
 }
 
 .btn:hover{
-background:#1d4ed8;
+    background:#1d4ed8;
 }
 
 .features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:40px;
 }
 
 .feature{
-background:#f8fafc;
-padding:25px;
-border-radius:15px;
-text-align:center;
-border:1px solid #e5e7eb;
+    text-align:center;
+    padding:20px;
 }
 
 .feature h3{
-margin-bottom:10px;
-color:#111827;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .feature p{
-font-size:14px;
-color:#6b7280;
+    color:#6b7280;
+    font-size:14px;
 }
 
 @media(max-width:768px){
 
-h1{
-font-size:30px;
-}
-
 .form-grid{
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 }
 
 .features{
-grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr;
 }
 
-.form-box{
-padding:20px;
+h1{
+    font-size:32px;
+}
+
+.container{
+    padding:25px;
 }
 
 }
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
 <div class="logo">
-<img src="logo.jpg" alt="LearnMate Logo">
+    <img src="logo.jpg" alt="LearnMate">
 </div>
 
 <h1>
-LearnMate <span class="highlight">Admission Form</span>
+    LearnMate <span class="highlight">Admission Form</span>
 </h1>
 
 <p class="subtitle">
-Fill out the form below and we'll contact you for a FREE demo class.
+    Fill out the form below and we'll contact you for a free demo class.
 </p>
 
 <div class="whatsapp">
-📱 WhatsApp: +91 7907868464
-</div>
-
-<div class="form-box">
-
-<form onsubmit="sendWhatsApp(); return false;">
-
-<div class="form-grid">
-
-<input
-type="text"
-id="student"
-placeholder="Student Name"
-required>
-
-<input
-type="text"
-id="parent"
-placeholder="Parent Name"
-required>
-
-<select id="class">
-
-<option>Class 1</option>
-<option>Class 2</option>
-<option>Class 3</option>
-<option>Class 4</option>
-<option>Class 5</option>
-<option>Class 6</option>
-<option>Class 7</option>
-<option>Class 8</option>
-<option>Class 9</option>
-<option>Class 10</option>
-<option>Class 11</option>
-<option>Class 12</option>
-
-</select>
-
-<select id="subject">
-
-<option>Mathematics</option>
-<option>Physics</option>
-<option>Chemistry</option>
-<option>Biology</option>
-<option>English</option>
-<option>Hindi</option>
-<option>Malayalam</option>
-<option>Arabic</option>
-
-</select>
-
-<input
-class="full"
-type="tel"
-id="phone"
-placeholder="Phone Number"
-required>
-
-<button
-class="btn full"
-type="submit">
-
-Book Free Demo Class
-
-</button>
-
-</div>
-
-</form>
-
+    WhatsApp: +91 7907868464
 </div>
 
 <div class="features">
 
 <div class="feature">
-<h3>Expert Tutors</h3>
-<p>Experienced teachers with personalized guidance.</p>
+    <h3>Expert Tutors</h3>
+    <p>Experienced teachers for all subjects.</p>
 </div>
 
 <div class="feature">
-<h3>Live Online Classes</h3>
-<p>Interactive sessions from the comfort of your home.</p>
+    <h3>Live Classes</h3>
+    <p>Interactive online learning from home.</p>
 </div>
 
 <div class="feature">
-<h3>Weekly Tests</h3>
-<p>Track progress with regular assessments.</p>
+    <h3>Weekly Tests</h3>
+    <p>Regular assessments and progress tracking.</p>
 </div>
 
 <div class="feature">
-<h3>Proven Results</h3>
-<p>Focused mentoring to improve academic performance.</p>
+    <h3>Proven Results</h3>
+    <p>Personal mentoring and academic success.</p>
 </div>
 
 </div>
-
-</div>
-
-<script>
-
-function sendWhatsApp(){
-
-let student=document.getElementById('student').value;
-let parent=document.getElementById('parent').value;
-let clas=document.getElementById('class').value;
-let subject=document.getElementById('subject').value;
-let phone=document.getElementById('phone').value;
-
-let message=`Hello LearnMate,
-
-Student Name: ${student}
-Parent Name: ${parent}
-Class: ${clas}
-Subject: ${subject}
-Phone Number: ${phone}
-
-I would like to book a FREE demo class.`;
-
-window.open(
-`https://wa.me/917907868464?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
-}
-
-</script>
-
-</body>
-</html>
