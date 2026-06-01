@@ -3,75 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LearnMate Admission Form</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
 body{
-font-family:Arial,sans-serif;
-background:#f4f8ff;
-padding:20px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
 }
 
 .container{
-max-width:600px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:25px;
+
+padding:50px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+color:white;
+}
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+width:100%;
+max-width:420px;
+}
+
+.tagline{
+text-align:center;
+font-size:16px;
+opacity:.9;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+font-size:15px;
+opacity:.9;
+margin-bottom:35px;
 }
 
 h1{
 text-align:center;
-color:#0ea5e9;
+font-size:42px;
+margin-bottom:10px;
 }
 
-input,select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:8px;
+.whatsapp{
+text-align:center;
+margin-bottom:35px;
+font-size:17px;
 }
 
-button{
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+input,
+select{
 width:100%;
 padding:15px;
-background:#0ea5e9;
-color:white;
 border:none;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
+border-radius:12px;
+font-size:15px;
+outline:none;
 }
 
-button:hover{
-background:#0284c7;
+.full{
+grid-column:1 / -1;
 }
+
+.btn{
+width:100%;
+padding:18px;
+
+border:none;
+
+border-radius:15px;
+
+background:#fbbf24;
+
+color:#111827;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.note{
+text-align:center;
+margin-top:20px;
+font-size:14px;
+opacity:.9;
+}
+
+@media(max-width:768px){
+
+.container{
+padding:30px 20px;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:30px;
+}
+
+.logo img{
+max-width:280px;
+}
+
+}
+
 </style>
+
 </head>
 <body>
 
 <div class="container">
-<img src="logo.jpg" alt="LearnMate Logo" style="max-width:380px;display:block;margin:auto;">
- <p style="text-align:center;color:#666;margin-top:-10px;">
+
+<div class="logo">
+<img src="logo.jpg" alt="LearnMate Logo">
+</div>
+
+<p class="tagline">
 Your Partner in Academic Success
 </p>
-  <p style="text-align:center;">
-Fill out the form below and we'll contact you for a free demo class.
+
+<p class="subtitle">
+Fill out the form below and we'll contact you for a FREE demo class.
 </p>
-<h1>LearnMate Admission Form</h1>
+
+<h1>Admission Form</h1>
+
+<div class="whatsapp">
+📱 WhatsApp: +91 7907868464
+</div>
 
 <form onsubmit="sendWhatsApp(); return false;">
-  <p style="text-align:center;margin-top:15px;">
-📱 WhatsApp: +91 7907868464
-</p>
 
-<input type="text" id="student" placeholder="Student Name" required>
+<div class="form-grid">
 
-<input type="text" id="parent" placeholder="Parent Name" required>
+<input type="text"
+id="student"
+placeholder="Student Name"
+required>
+
+<input type="text"
+id="parent"
+placeholder="Parent Name"
+required>
 
 <select id="class">
+
 <option>Class 1</option>
 <option>Class 2</option>
 <option>Class 3</option>
@@ -84,9 +205,11 @@ Fill out the form below and we'll contact you for a free demo class.
 <option>Class 10</option>
 <option>Class 11</option>
 <option>Class 12</option>
+
 </select>
 
 <select id="subject">
+
 <option>Mathematics</option>
 <option>Physics</option>
 <option>Chemistry</option>
@@ -95,15 +218,31 @@ Fill out the form below and we'll contact you for a free demo class.
 <option>Hindi</option>
 <option>Malayalam</option>
 <option>Arabic</option>
+
 </select>
 
-<input type="tel" id="phone" placeholder="Phone Number" required>
+<input
+class="full"
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
 
-<button type="submit">
+<button
+type="submit"
+class="btn full">
+
 Book Free Demo Class
+
 </button>
 
+</div>
+
 </form>
+
+<p class="note">
+We will contact you shortly after receiving your request.
+</p>
 
 </div>
 
@@ -123,9 +262,9 @@ Student Name: ${student}
 Parent Name: ${parent}
 Class: ${clas}
 Subject: ${subject}
-Phone: ${phone}
+Phone Number: ${phone}
 
-I would like to book a free demo class.`;
+I would like to book a FREE demo class.`;
 
 window.open(
 `https://wa.me/917907868464?text=${encodeURIComponent(message)}`,
